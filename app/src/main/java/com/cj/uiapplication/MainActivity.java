@@ -54,9 +54,14 @@ public class MainActivity extends AppCompatActivity {
         draw.text = "draw";
         draw.mClass = DrawActivity.class;
 
+        MainItemInfo handler = new MainItemInfo();
+        draw.text = "handler";
+        draw.mClass = HandlerActivity.class;
+
         arrayList.add(measure);
         arrayList.add(layout);
         arrayList.add(draw);
+        arrayList.add(handler);
         return arrayList;
     }
 }
