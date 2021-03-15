@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="flow_layout_horizontal_gap">12dp</dimen>
+    <dimen name="flow_layout_vertical_gap">12dp</dimen>
+</resources>

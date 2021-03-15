@@ -11,7 +11,8 @@
         android:theme="@style/Theme.UIApplication">
         <activity android:name=".TestFragmentActivity"></activity>
         <activity android:name=".HandlerActivity" />
-        <activity android:name=".LayoutActivity" />
+        <activity android:name=".LayoutActivity"
+            android:label="layout"/>
         <activity android:name=".MeasureActivity" />
         <activity
             android:name=".DrawActivity"
