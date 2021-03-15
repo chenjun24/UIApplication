@@ -55,13 +55,18 @@ public class MainActivity extends AppCompatActivity {
         draw.mClass = DrawActivity.class;
 
         MainItemInfo handler = new MainItemInfo();
-        draw.text = "handler";
-        draw.mClass = HandlerActivity.class;
+        handler.text = "handler";
+        handler.mClass = HandlerActivity.class;
+
+        MainItemInfo testFragment = new MainItemInfo();
+        testFragment.text = "testFragment";
+        testFragment.mClass = TestFragmentActivity.class;
 
         arrayList.add(measure);
         arrayList.add(layout);
         arrayList.add(draw);
         arrayList.add(handler);
+        arrayList.add(testFragment);
         return arrayList;
     }
 }
