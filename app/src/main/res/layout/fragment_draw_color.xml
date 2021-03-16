@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.draw.DrawColorFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:textSize="24dp"
+        android:textColor="@color/design_default_color_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="draw color,椭圆，圆角矩形，线段" />
+
+     <com.cj.uiapplication.view.draw.ColorView
+         android:layout_width="100dp"
+         android:layout_height="100dp"/>
+
+    <com.cj.uiapplication.view.draw.CustomImageView
+        android:src="@color/purple_200"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+    <com.cj.uiapplication.view.draw.OvalView
+        android:layout_width="300dp"
+        android:layout_height="200dp"/>
+    <com.cj.uiapplication.view.draw.RoundRectView
+        android:layout_width="300dp"
+        android:layout_height="300dp"/>
+</LinearLayout>

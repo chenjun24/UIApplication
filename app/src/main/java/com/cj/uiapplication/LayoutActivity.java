@@ -2,13 +2,12 @@ package com.cj.uiapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.util.Log;
 
-import com.cj.uiapplication.adapter.layout.MyFragmentPageAdapter;
+import com.cj.uiapplication.adapter.layout.LayoutFragmentPageAdapter;
 import com.cj.uiapplication.view.layout.LayoutFragment1;
 import com.cj.uiapplication.view.layout.LayoutFragment2;
 import com.cj.uiapplication.view.layout.LayoutFragment3;
@@ -29,7 +28,7 @@ public class LayoutActivity extends AppCompatActivity {
         fragments.add(LayoutFragment1.newInstance("aa","aa"));
         fragments.add(LayoutFragment2.newInstance("bb","bb"));
         fragments.add(LayoutFragment3.newInstance("cc","cc"));
-        MyFragmentPageAdapter adapter = new MyFragmentPageAdapter(getSupportFragmentManager());
+        LayoutFragmentPageAdapter adapter = new LayoutFragmentPageAdapter(getSupportFragmentManager());
         adapter.setFragments(fragments);
         viewPager.setAdapter(adapter);
     }
