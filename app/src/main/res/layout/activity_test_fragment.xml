@@ -16,7 +16,6 @@
     <FrameLayout
         android:id="@+id/fg_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/design_default_color_primary" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>

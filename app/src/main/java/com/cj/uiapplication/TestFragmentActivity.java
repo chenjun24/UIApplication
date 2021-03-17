@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-import com.cj.uiapplication.view.testfragment.BlankFragment1;
+import com.cj.uiapplication.view.testfragment.TestFragment;
 
 public class TestFragmentActivity extends AppCompatActivity {
     private final static String TAG = "TestFragmentActivity";
@@ -36,7 +36,7 @@ public class TestFragmentActivity extends AppCompatActivity {
         Log.d(TAG, "click: ");
         supportFragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.fg_content, BlankFragment1.newInstance("param1","param2"),"fragment1");
+        fragmentTransaction.add(R.id.fg_content, TestFragment.newInstance("param1","param2"),"fragment1");
         fragmentTransaction.commit();
         //fragmentTransaction.commitAllowingStateLoss();
 

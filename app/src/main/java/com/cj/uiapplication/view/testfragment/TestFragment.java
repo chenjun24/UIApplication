@@ -15,10 +15,10 @@ import com.cj.uiapplication.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link BlankFragment1#newInstance} factory method to
+ * Use the {@link TestFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BlankFragment1 extends Fragment {
+public class TestFragment extends Fragment {
     private final static String TAG = "BlankFragment1";
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,7 +29,7 @@ public class BlankFragment1 extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public BlankFragment1() {
+    public TestFragment() {
         // Required empty public constructor
         Log.d(TAG, "BlankFragment1: ");
     }
@@ -43,9 +43,9 @@ public class BlankFragment1 extends Fragment {
      * @return A new instance of fragment BlankFragment1.
      */
     // TODO: Rename and change types and number of parameters
-    public static BlankFragment1 newInstance(String param1, String param2) {
+    public static TestFragment newInstance(String param1, String param2) {
         Log.d(TAG, "newInstance: ");
-        BlankFragment1 fragment = new BlankFragment1();
+        TestFragment fragment = new TestFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -86,7 +86,7 @@ public class BlankFragment1 extends Fragment {
                              Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView: ");
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank1, container, false);
+        return inflater.inflate(R.layout.fragment_test, container, false);
     }
 
     @Override
