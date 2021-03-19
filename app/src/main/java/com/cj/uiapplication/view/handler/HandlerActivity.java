@@ -1,4 +1,4 @@
-package com.cj.uiapplication;
+package com.cj.uiapplication.view.handler;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,8 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
+
+import com.cj.uiapplication.R;
 
 /**
  * 关于handler的几个问题

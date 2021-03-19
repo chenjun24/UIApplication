@@ -1,4 +1,4 @@
-package com.cj.uiapplication;
+package com.cj.uiapplication.view.layout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -7,6 +7,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.cj.uiapplication.R;
 import com.cj.uiapplication.adapter.layout.LayoutFragmentPageAdapter;
 import com.cj.uiapplication.view.layout.LayoutFragment1;
 import com.cj.uiapplication.view.layout.LayoutFragment2;

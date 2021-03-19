@@ -9,13 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UIApplication">
-        <activity android:name=".TestFragmentActivity"></activity>
-        <activity android:name=".HandlerActivity" />
-        <activity android:name=".LayoutActivity"
-            android:label="layout"/>
-        <activity android:name=".MeasureActivity" />
+        <activity android:name=".view.annotation.AnnotationActivity"></activity>
+        <activity android:name=".view.testfragment.TestFragmentActivity" />
+        <activity android:name=".view.handler.HandlerActivity" />
         <activity
-            android:name=".DrawActivity"
+            android:name=".view.layout.LayoutActivity"
+            android:label="layout" />
+        <activity android:name=".view.measure.MeasureActivity" />
+        <activity
+            android:name=".view.draw.DrawActivity"
             android:label="draw" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -1,8 +1,10 @@
-package com.cj.uiapplication;
+package com.cj.uiapplication.view.measure;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.cj.uiapplication.R;
 
 public class MeasureActivity extends AppCompatActivity {
 

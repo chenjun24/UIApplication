@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".DrawActivity">
+    tools:context=".view.draw.DrawActivity">
    <androidx.recyclerview.widget.RecyclerView
        android:id="@+id/menu_rv"
        android:background="@color/white_20percent"

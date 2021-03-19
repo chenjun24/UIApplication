@@ -10,6 +10,12 @@ import android.os.Bundle;
 import com.cj.uiapplication.adapter.MainAdapter;
 import com.cj.uiapplication.decoration.MainItemDecoration;
 import com.cj.uiapplication.model.bean.MainItemInfo;
+import com.cj.uiapplication.view.annotation.AnnotationActivity;
+import com.cj.uiapplication.view.draw.DrawActivity;
+import com.cj.uiapplication.view.handler.HandlerActivity;
+import com.cj.uiapplication.view.layout.LayoutActivity;
+import com.cj.uiapplication.view.measure.MeasureActivity;
+import com.cj.uiapplication.view.testfragment.TestFragmentActivity;
 
 import java.util.ArrayList;
 
@@ -62,11 +68,16 @@ public class MainActivity extends AppCompatActivity {
         testFragment.text = "testFragment";
         testFragment.mClass = TestFragmentActivity.class;
 
+        MainItemInfo annotation = new MainItemInfo();
+        annotation.text = "annotation";
+        annotation.mClass = AnnotationActivity.class;
+
         arrayList.add(measure);
         arrayList.add(layout);
         arrayList.add(draw);
         arrayList.add(handler);
         arrayList.add(testFragment);
+        arrayList.add(annotation);
         return arrayList;
     }
 }

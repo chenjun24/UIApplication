@@ -1,2 +1,5 @@
+include ':ioc-processor'
+include ':ioc'
+include ':ioc-annotation'
 include ':app'
 rootProject.name = "UIApplication"

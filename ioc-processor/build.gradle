@@ -1,0 +1,17 @@
+plugins {
+    id 'java-library'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+dependencies {
+   //帮我们生成 META-INF元信息，指明注解处理器的完整路径
+    implementation 'com.google.auto.service:auto-service:1.0-rc6'
+    annotationProcessor'com.google.auto.service:auto-service:1.0-rc6'//----注意需要加上这个
+    //gradle在5.0以后为了加快编译速度，跳过的自定义增量编译，你需要加上如下代码实现生成自定义注解相关文件
+    implementation project(path: ':ioc-annotation')
+
+    implementation 'com.squareup:javapoet:1.10.0'//用于生成java类
+}

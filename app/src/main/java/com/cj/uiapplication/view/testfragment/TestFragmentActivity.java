@@ -1,4 +1,4 @@
-package com.cj.uiapplication;
+package com.cj.uiapplication.view.testfragment;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
+import com.cj.uiapplication.R;
 import com.cj.uiapplication.view.testfragment.TestFragment;
 
 public class TestFragmentActivity extends AppCompatActivity {

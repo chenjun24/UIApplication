@@ -1,4 +1,4 @@
-package com.cj.uiapplication;
+package com.cj.uiapplication.view.draw;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
+import com.cj.uiapplication.R;
 import com.cj.uiapplication.adapter.DrawItemAdapter;
 import com.cj.uiapplication.adapter.draw.DrawFragmentPageAdapter;
 import com.cj.uiapplication.decoration.DrawItemDecoration;
