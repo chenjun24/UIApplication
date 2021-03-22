@@ -9,15 +9,10 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 
 import com.cj.uiapplication.R;
-import com.cj.uiapplication.adapter.DrawItemAdapter;
+import com.cj.uiapplication.adapter.draw.DrawItemAdapter;
 import com.cj.uiapplication.adapter.draw.DrawFragmentPageAdapter;
-import com.cj.uiapplication.decoration.DrawItemDecoration;
+import com.cj.uiapplication.decoration.draw.DrawItemDecoration;
 import com.cj.uiapplication.model.bean.DrawItemInfo;
-import com.cj.uiapplication.view.draw.DrawBitmapFragment;
-import com.cj.uiapplication.view.draw.DrawPathFragment;
-import com.cj.uiapplication.view.draw.DrawCircleFragment;
-import com.cj.uiapplication.view.draw.DrawColorFragment;
-import com.cj.uiapplication.view.draw.DrawTextFragment;
 
 import java.util.ArrayList;
 

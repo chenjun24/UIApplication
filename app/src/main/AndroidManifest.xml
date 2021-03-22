@@ -3,13 +3,15 @@
     package="com.cj.uiapplication">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UIApplication">
-        <activity android:name=".view.annotation.AnnotationActivity"></activity>
+        <activity android:name=".view.layoutmanager.LayoutManagerActivity"></activity>
+        <activity android:name=".view.annotation.AnnotationActivity" />
         <activity android:name=".view.testfragment.TestFragmentActivity" />
         <activity android:name=".view.handler.HandlerActivity" />
         <activity

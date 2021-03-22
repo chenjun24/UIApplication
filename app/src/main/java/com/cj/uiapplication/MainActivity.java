@@ -14,6 +14,7 @@ import com.cj.uiapplication.view.annotation.AnnotationActivity;
 import com.cj.uiapplication.view.draw.DrawActivity;
 import com.cj.uiapplication.view.handler.HandlerActivity;
 import com.cj.uiapplication.view.layout.LayoutActivity;
+import com.cj.uiapplication.view.layoutmanager.LayoutManagerActivity;
 import com.cj.uiapplication.view.measure.MeasureActivity;
 import com.cj.uiapplication.view.testfragment.TestFragmentActivity;
 
@@ -72,12 +73,17 @@ public class MainActivity extends AppCompatActivity {
         annotation.text = "annotation";
         annotation.mClass = AnnotationActivity.class;
 
+        MainItemInfo layoutManager = new MainItemInfo();
+        layoutManager.text = "layoutManager";
+        layoutManager.mClass = LayoutManagerActivity.class;
+
         arrayList.add(measure);
         arrayList.add(layout);
         arrayList.add(draw);
         arrayList.add(handler);
         arrayList.add(testFragment);
         arrayList.add(annotation);
+        arrayList.add(layoutManager);
         return arrayList;
     }
 }
