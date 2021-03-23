@@ -16,6 +16,7 @@ import com.cj.uiapplication.view.handler.HandlerActivity;
 import com.cj.uiapplication.view.layout.LayoutActivity;
 import com.cj.uiapplication.view.layoutmanager.LayoutManagerActivity;
 import com.cj.uiapplication.view.measure.MeasureActivity;
+import com.cj.uiapplication.view.mmkv.MMKVActivity;
 import com.cj.uiapplication.view.testfragment.TestFragmentActivity;
 
 import java.util.ArrayList;
@@ -77,6 +78,10 @@ public class MainActivity extends AppCompatActivity {
         layoutManager.text = "layoutManager";
         layoutManager.mClass = LayoutManagerActivity.class;
 
+        MainItemInfo mmkv = new MainItemInfo();
+        mmkv.text = "mmkv";
+        mmkv.mClass = MMKVActivity.class;
+
         arrayList.add(measure);
         arrayList.add(layout);
         arrayList.add(draw);
@@ -84,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(testFragment);
         arrayList.add(annotation);
         arrayList.add(layoutManager);
+        arrayList.add(mmkv);
         return arrayList;
     }
 }

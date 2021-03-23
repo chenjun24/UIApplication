@@ -55,7 +55,7 @@ public class GenericTest {
     static interface ICommandExecutor<T extends Command>{
 
     }
-    static class SubCommandExecutor implements ICommandExecutor<SubCommand> {
+    static class SubCommandExecutor<T> implements ICommandExecutor<SubCommand> {
 
     }
 
