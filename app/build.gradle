@@ -46,4 +46,7 @@ dependencies {
     annotationProcessor project(':ioc-processor')//注解解释器 java library
 
     implementation 'com.tencent:mmkv-static:1.2.7'
+
+    implementation 'com.google.dagger:dagger:2.15'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.15'
 }

@@ -11,6 +11,7 @@ import com.cj.uiapplication.adapter.MainAdapter;
 import com.cj.uiapplication.decoration.MainItemDecoration;
 import com.cj.uiapplication.model.bean.MainItemInfo;
 import com.cj.uiapplication.view.annotation.AnnotationActivity;
+import com.cj.uiapplication.view.dagger2.Dagger2Activity;
 import com.cj.uiapplication.view.draw.DrawActivity;
 import com.cj.uiapplication.view.handler.HandlerActivity;
 import com.cj.uiapplication.view.layout.LayoutActivity;
@@ -82,6 +83,10 @@ public class MainActivity extends AppCompatActivity {
         mmkv.text = "mmkv";
         mmkv.mClass = MMKVActivity.class;
 
+        MainItemInfo dagger2 = new MainItemInfo();
+        dagger2.text = "dagger2";
+        dagger2.mClass = Dagger2Activity.class;
+
         arrayList.add(measure);
         arrayList.add(layout);
         arrayList.add(draw);
@@ -90,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(annotation);
         arrayList.add(layoutManager);
         arrayList.add(mmkv);
+        arrayList.add(dagger2);
         return arrayList;
     }
 }
