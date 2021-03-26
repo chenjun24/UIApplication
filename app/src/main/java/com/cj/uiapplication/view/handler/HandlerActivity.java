@@ -1,6 +1,7 @@
 package com.cj.uiapplication.view.handler;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -8,6 +9,8 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
+import android.util.Log;
+import android.view.View;
 
 import com.cj.uiapplication.R;
 
@@ -27,7 +30,8 @@ import com.cj.uiapplication.R;
  *6.没有消息处理时 主线程会进入休眠状态   不会出现anr
  */
 public class HandlerActivity extends AppCompatActivity {
-
+    private static final String TAG = "HandlerActivity";
+    MyHandler handler1;
     /**
      *
      * @param savedInstanceState
@@ -36,17 +40,28 @@ public class HandlerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_handler);
-
+        handler1 = new MyHandler(Looper.getMainLooper(), new Handler.Callback() {
+            @Override
+            public boolean handleMessage(@NonNull Message msg) {
+                Log.d(TAG, "handleMessage: 1111111111111111111");
+                return false;
+            }
+        });
     }
 
     private void test(){
-        MyThread thread = new MyThread();
+
+      /*  MyThread thread = new MyThread();
         //Handler handler = new Handler(getMainLooper());
         Handler handler = new Handler(thread.getLooper());
         Message obtain = Message.obtain();//创建message使用这种方式 享元模式
         handler.sendMessage(obtain);
-        thread.quitSafely();
+        thread.quitSafely();*/
         //HandlerThread
+    }
+
+    public void click(View view) {
+        handler1.sendEmptyMessage(1);
     }
 
     /**
@@ -59,9 +74,14 @@ public class HandlerActivity extends AppCompatActivity {
      */
 
     static class MyHandler extends Handler{
+        public MyHandler( Looper looper,Callback callback){
+            super(looper,callback);
+        }
+
         @Override
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
+            Log.d(TAG, "handleMessage: 222222222222");
         }
     }
 
