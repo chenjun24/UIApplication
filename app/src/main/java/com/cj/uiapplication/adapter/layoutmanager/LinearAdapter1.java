@@ -1,6 +1,5 @@
 package com.cj.uiapplication.adapter.layoutmanager;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -10,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.AsyncListDiffer;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cj.uiapplication.R;
@@ -17,10 +17,11 @@ import com.cj.uiapplication.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LinearAdapter extends RecyclerView.Adapter<LinearAdapter.MyViewHolder> {
-    private List<Person> personList;
-    public LinearAdapter(List<Person> personList){
-        this.personList = personList;
+public class LinearAdapter1 extends RecyclerView.Adapter<LinearAdapter1.MyViewHolder> {
+    private AsyncListDiffer<Person> differ;
+    public LinearAdapter1(){
+      //  this.personList = personList;
+        differ = new AsyncListDiffer<Person>(this,new MyItemCallback());
     }
 
     @NonNull
@@ -31,12 +32,10 @@ public class LinearAdapter extends RecyclerView.Adapter<LinearAdapter.MyViewHold
     }
 
     public void setPersonList(List<Person> personList) {
-        this.personList = new ArrayList<>(personList);
+        differ.submitList(personList);
     }
 
-    public List<Person> getPersonList() {
-        return personList;
-    }
+
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
@@ -51,7 +50,7 @@ public class LinearAdapter extends RecyclerView.Adapter<LinearAdapter.MyViewHold
 //            ViewGroup.LayoutParams layoutParams = holder.itemView.getLayoutParams();
 //            layoutParams.height=200;
 //        }
-        Person person = personList.get(position);
+        Person person = differ.getCurrentList().get(position);
         holder.name.setText(person.name);
         holder.number.setText(person.number);
     }
@@ -82,7 +81,7 @@ public class LinearAdapter extends RecyclerView.Adapter<LinearAdapter.MyViewHold
 
     @Override
     public int getItemCount() {
-        return personList==null ? 0:personList.size();
+        return differ.getCurrentList().size();
     }
 
     static class MyViewHolder extends RecyclerView.ViewHolder{
