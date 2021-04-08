@@ -20,6 +20,7 @@ import com.cj.uiapplication.view.layoutmanager.LayoutManagerActivity;
 import com.cj.uiapplication.view.measure.MeasureActivity;
 import com.cj.uiapplication.view.mmkv.MMKVActivity;
 import com.cj.uiapplication.view.testfragment.TestFragmentActivity;
+import com.cj.uiapplication.view.vector.VectorDrawableActivity;
 
 import java.util.ArrayList;
 
@@ -92,6 +93,10 @@ public class MainActivity extends AppCompatActivity {
         bigView.text = "bigView";
         bigView.mClass = BigViewActivity.class;
 
+        MainItemInfo vectorDrawable = new MainItemInfo();
+        vectorDrawable.text = "vectorDrawable";
+        vectorDrawable.mClass = VectorDrawableActivity.class;
+
         arrayList.add(measure);
         arrayList.add(layout);
         arrayList.add(draw);
@@ -102,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(mmkv);
         arrayList.add(dagger2);
         arrayList.add(bigView);
+        arrayList.add(vectorDrawable);
         return arrayList;
     }
 }
