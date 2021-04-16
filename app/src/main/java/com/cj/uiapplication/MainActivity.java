@@ -12,6 +12,7 @@ import com.cj.uiapplication.decoration.MainItemDecoration;
 import com.cj.uiapplication.model.bean.MainItemInfo;
 import com.cj.uiapplication.view.annotation.AnnotationActivity;
 import com.cj.uiapplication.view.bigview.BigViewActivity;
+import com.cj.uiapplication.view.constrait.ConstraintActivity;
 import com.cj.uiapplication.view.dagger2.Dagger2Activity;
 import com.cj.uiapplication.view.draw.DrawActivity;
 import com.cj.uiapplication.view.handler.HandlerActivity;
@@ -97,6 +98,10 @@ public class MainActivity extends AppCompatActivity {
         vectorDrawable.text = "vectorDrawable";
         vectorDrawable.mClass = VectorDrawableActivity.class;
 
+        MainItemInfo constraint = new MainItemInfo();
+        constraint.text = "constraint";
+        constraint.mClass = ConstraintActivity.class;
+
         arrayList.add(measure);
         arrayList.add(layout);
         arrayList.add(draw);
@@ -108,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(dagger2);
         arrayList.add(bigView);
         arrayList.add(vectorDrawable);
+        arrayList.add(constraint);
         return arrayList;
     }
 }

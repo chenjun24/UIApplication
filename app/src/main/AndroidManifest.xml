@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UIApplication">
-        <activity android:name=".view.vector.VectorDrawableActivity"></activity>
+        <activity android:name=".view.constrait.ConstraintActivity"></activity>
+        <activity android:name=".view.vector.VectorDrawableActivity" />
         <activity android:name=".view.bigview.BigViewActivity" />
         <activity android:name=".view.dagger2.Dagger2Activity" />
         <activity android:name=".view.mmkv.MMKVActivity" />
