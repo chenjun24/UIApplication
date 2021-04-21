@@ -1,5 +1,6 @@
 package com.cj.uiapplication.leetcode;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -58,14 +59,71 @@ public class Test5 {
         node2.left = node3;
         node2.right = node4;
 
-        node1.left = node5;
-        node1.right = node6;
+//        node1.left = node5;
+//        node1.right = node6;
 
        // preOrder(root);//前序遍历 二叉树
        // preOrder1(root);//
        // inorder(root);//
-        inorder1(root);
+       // afOrder(root);
+      //  afOrder1(root);
+      //  inorder1(root);
        // bfs(root);
+        int[] preorder ={3,9,20,15,7};
+        int[] inorder = {9,3,15,20,7};
+        HashMap<Integer,Integer> hashMap = new HashMap<>();//中序遍历中 下标对应的值 ->下标
+        for (int i=0;i<inorder.length;i++){
+            hashMap.put(inorder[i],i);
+        }
+        TreeNode treeNode = preOrder(preorder, 0, preorder.length - 1,inorder,0,inorder.length-1,hashMap);
+        Util.println("----------------------------------");
+        preOrder(treeNode);
+    }
+
+    /**
+     * 前序遍历 preorder = [3,9,20,15,7]
+     *  * 中序遍历 inorder = [9,3,15,20,7]
+     *  * 返回如下的二叉树：
+     *  * <p>
+     *  *     3
+     *  *    / \
+     *  *   9  20
+     *  *     /  \
+     *  *    15   7
+     * @return
+     */
+    private static TreeNode preOrder(int[] preorder,int pStart,int pEnd,int[] inorder,int iStart,int iEnd,HashMap<Integer,Integer> hashMap){
+       // int[] preorder = {3,9,20,15,7};
+       // int[] inorder = {9,3,15,20,7};
+ //       HashMap<Integer,Integer> hashMap = new HashMap<>();//中序遍历中 下标对应的值 ->下标
+//        for (int i=0;i<inorder.length;i++){
+//            hashMap.put(inorder[i],i);
+//        }
+        Util.println("pStart--"+pStart+" pEnd--"+pEnd);
+        if (pStart>pEnd)
+            return null;
+        TreeNode  root = new TreeNode();
+        root.value = preorder[pStart];//前序遍历的第一个节点肯定是根节点
+        //确定根节点在中序遍历的下标 就可以确定 两个数组中 左 右子树的 范围
+        int index = hashMap.get(root.value);//下标
+        Util.println("index--"+index);
+        int mIndex = index-iStart;
+        Util.println("mIndex--"+mIndex);
+        //前序遍历 0-index  是左子树  index+1 --preorder.length-1是右子树
+        //中序遍历 0-index-1 是左子树 index+1 -inorderlength-1是右子树
+
+        root.left = preOrder(preorder,pStart+1,pStart+mIndex,inorder,iStart,index-1,hashMap);
+        root.right = preOrder(preorder,pStart+mIndex+1,pEnd,inorder,index+1,iEnd,hashMap);
+        /**
+         * [3,9,20,15,7]
+         * [9,3,15,20,7]
+         *
+         * [9]
+         * [9]
+         *     [20,15,7]
+         *     [15,20,7]
+         */
+        return root;
     }
 
     /**
@@ -117,7 +175,7 @@ public class Test5 {
      *   / \  /  \
      *  1  4 15   7
      *
-     * 1，9,4,3,15,20,7
+     * 1,9,4,3,15,20,7
      * 递归实现
      */
     private static void inorder(TreeNode root){
@@ -137,7 +195,8 @@ public class Test5 {
      *      *   / \  /  \
      *      *  1  4 15   7
      * @param root
-     *
+     *非递归方式 实现中序遍历  利用栈结构
+     * 1，9,4,3,15,20,7
      */
     private static void inorder1(TreeNode root){
         TreeNode current = root;
@@ -157,7 +216,64 @@ public class Test5 {
     }
 
     /**
-     *  二叉树中序遍历  先左 后根 再右
+     * 二叉树后序遍历  先左 后右 再根
+     *      *       3
+     *      *      / \
+     *      *     9  20
+     *      *   / \  /  \
+     *      *  1  4 15   7
+     * @param root
+     * 递归实现
+     * 1,4,9,15,7,20,3
+     */
+    private static void afOrder(TreeNode root){
+         if (root.left != null){
+             afOrder(root.left);
+         }
+        if (root.right != null){
+            afOrder(root.right);
+        }
+        Util.print(root.value);
+    }
+
+    /**
+     * 二叉树后序遍历  先左 后右 再根
+     *      *       3
+     *      *      / \
+     *      *     9  20
+     *      *   / \  /  \
+     *      *  1  4 15   7
+     * @param root
+     * 非递归实现
+     * 1,4,9,15,7,20,3
+     */
+    private static void afOrder1(TreeNode root){
+        TreeNode current = root;
+        Stack<TreeNode> stack = new Stack<>();
+        Stack<Integer> stack1 = new Stack<>();
+        int i = 1;
+        while (current!= null || !stack.isEmpty()){
+            while (current != null){
+                stack.push(current);
+                stack1.push(0);
+                current = current.left;
+            }
+            while (!stack.isEmpty() && stack1.peek() == i){
+                stack1.pop();
+                Util.print(stack.pop().value);
+            }
+            if (!stack.empty()){
+                stack1.pop();
+                stack1.push(1);
+                current = stack.peek();
+                current = current.right;
+            }
+        }
+    }
+     //1 9 3        ->9 3->4 9 3        ->9 3 ->3 -> 15 20 3
+    // 0 0 0-> 1 0 0->0 0->0 1 0->1 1 0-> 1 0 ->0-> 0 0 1
+    /**
+     *
      *      *       3
      *      *      / \
      *      *     9  20
